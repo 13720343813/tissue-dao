@@ -27,7 +27,7 @@ public class BaseServiceImpl<T> implements IBaseService<T> {
     }
 
     @Override
-    public boolean update(Map update) {
+    public boolean update(T t) {
         return false;
     }
 }

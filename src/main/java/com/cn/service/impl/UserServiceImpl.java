@@ -47,9 +47,9 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements IUserServi
     }
 
     @Override
-    public boolean update(Map update) {
+    public boolean update(User user) {
         try {
-            userMapper.update(update);
+            userMapper.update(user);
             return true;
         } catch (Exception e) {
             e.printStackTrace();

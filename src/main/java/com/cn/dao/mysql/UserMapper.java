@@ -19,6 +19,6 @@ public interface UserMapper {
 
     int deleteById(Object id);
 
-    int update(Map<String, Object> update);
+    int update(User user);
 
 }

@@ -44,14 +44,14 @@
         values(#{name},#{password},#{identifyType},#{identifyNumber},#{department.id})
     </insert>
 
-    <update id="update" parameterType="java.util.HashMap">
+    <update id="update" parameterType="User">
         update user
         <trim prefix="set" suffix="where id = #{id}" suffixOverrides=",">
             <if test="name != null">name=#{name},</if>
             <if test="password != null">password=#{password},</if>
             <if test="identifyType != null">identify_type=#{identifyType},</if>
             <if test="identifyNumber != null">identify_number=#{identifyNumber},</if>
-            <if test="deptId != null">dept_id=#{deptId},</if>
+            <if test="department.id != null">dept_id=#{department.id},</if>
         </trim>
     </update>
 

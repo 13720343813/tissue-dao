@@ -4,14 +4,14 @@ import java.util.List;
 import java.util.Map;
 
 public interface IBaseService<T> {
-    public T fetchById(Object id);
+    public abstract T fetchById(Object id);
 
-    public List<T> fetchList(Map<String, Object> query);
+    public abstract List<T> fetchList(Map<String, Object> query);
 
-    public boolean save(T t);
+    public abstract boolean save(T t);
 
-    public boolean update(Map<String, Object> update);
+    public abstract boolean update(T t);
 
 
-    public boolean deleteById(Object id);
+    public abstract boolean deleteById(Object id);
 }
