@@ -1,14 +1,14 @@
-package com.cn.service;
+package com.cn.service.impl;
 
 import com.cn.dao.MongoDao;
-import com.cn.entities.Product;
+import com.cn.entities.mongo.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
 @Service
-public class ProductService {
+public class ProductServiceImpl {
 
     @Autowired
     private MongoDao productDao;

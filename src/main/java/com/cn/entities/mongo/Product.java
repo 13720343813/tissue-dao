@@ -1,4 +1,4 @@
-package com.cn.entities;
+package com.cn.entities.mongo;
 
 import com.cn.annotation.GeneratedId;
 import lombok.AllArgsConstructor;
@@ -16,14 +16,4 @@ public class Product {
     private String name;
     private String title;
     private Double price;
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", title='" + title + '\'' +
-                ", price=" + price +
-                '}';
-    }
 }
