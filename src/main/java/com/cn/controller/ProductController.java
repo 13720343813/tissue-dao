@@ -3,6 +3,7 @@ package com.cn.controller;
 import com.cn.common.ServiceResponse;
 import com.cn.common.ServiceResponseCode;
 import com.cn.entities.mongo.Product;
+import com.cn.service.IProductService;
 import com.cn.service.impl.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,7 +16,7 @@ import java.util.Map;
 @RequestMapping("product")
 public class ProductController {
     @Autowired
-    private ProductServiceImpl productService;
+    private IProductService productService;
 
     @RequestMapping("fetchList")
     public ServiceResponse fetchList(@RequestBody Map<String, Object> request) {
