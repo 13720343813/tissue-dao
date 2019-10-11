@@ -2,6 +2,7 @@ package com.cn.dao.mysql;
 
 import com.cn.entities.mysql.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -20,5 +21,7 @@ public interface UserMapper {
     int deleteById(Object id);
 
     int update(User user);
+
+    int batchSave(List<User> users);
 
 }

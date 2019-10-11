@@ -36,8 +36,8 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, '张三', '123456', 0, '420683199908071832', 1);
-INSERT INTO `user` VALUES (2, '李四', '123456', 0, '420683199908071833', 2);
-INSERT INTO `user` VALUES (3, '赵六', '123456', 0, '420683199908071834', 3);
+INSERT INTO `user` VALUES (1, '张三', '123456', 0, '420612345678910980', 1);
+INSERT INTO `user` VALUES (2, '李四', '123456', 0, '420612345678910981', 2);
+INSERT INTO `user` VALUES (3, '赵六', '123456', 0, '420612345678910982', 3);
 
 SET FOREIGN_KEY_CHECKS = 1;

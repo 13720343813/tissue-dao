@@ -4,13 +4,16 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cn.dao.mysql.UserMapper">
 
+    <!--做返回结果映射,添加了resultMap之后,在select中就可以将resultMap指定为userResultMap,结果会映射为对象-->
     <resultMap id="userResultMap" type="User">
         <id property="id" column="id"/>
         <result property="name" column="name"/>
         <result property="password" column="password"/>
         <result property="identifyType" column="identify_type"/>
         <result property="identifyNumber" column="identify_number"/>
+        <!--关联Department表,javaType中指定Department的类路径,property中是对象的属性-->
         <association property="department" javaType="com.cn.entities.mysql.Department">
+            <!--此处的id指Department对象中的属性,dept_id是user表中的dept_id,关联字段-->
             <id property="id" column="dept_id"/>
             <result property="name" column="dept_name"/>
         </association>
@@ -42,6 +45,14 @@
     <insert id="save" parameterType="User">
         insert into user(name,password,identify_type,identify_number,dept_id)
         values(#{name},#{password},#{identifyType},#{identifyNumber},#{department.id})
+    </insert>
+
+    <insert id="batchSave" parameterType="java.util.List">
+        insert into user(name,password,identify_type,identify_number,dept_id)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.name},#{item.password},#{item.identifyType},#{item.identifyNumber},#{item.department.id})
+        </foreach>
     </insert>
 
     <update id="update" parameterType="User">

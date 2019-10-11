@@ -12,6 +12,5 @@ public interface IBaseService<T> {
 
     public abstract boolean update(T t);
 
-
     public abstract boolean deleteById(Object id);
 }

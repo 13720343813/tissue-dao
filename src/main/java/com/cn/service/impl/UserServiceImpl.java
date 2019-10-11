@@ -56,4 +56,15 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements IUserServi
         }
         return false;
     }
+
+    @Override
+    public boolean batchSave(List<User> users) {
+        try {
+            userMapper.batchSave(users);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }
